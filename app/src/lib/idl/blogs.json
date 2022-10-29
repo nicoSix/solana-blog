@@ -1,0 +1,14 @@
+{
+  "version": "0.1.0",
+  "name": "blogs",
+  "instructions": [
+    {
+      "name": "initialize",
+      "accounts": [],
+      "args": []
+    }
+  ],
+  "metadata": {
+    "address": "4xg1SmxxqfgXY98iJShQZiCm1AToXPb5g4dEpgzmCGiE"
+  }
+}
