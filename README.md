@@ -7,3 +7,4 @@ This is the repo of my blog dApp, where I try to implement whatever crosses my m
 - Next.js and SSR
 - Solana programming model in general
 - Rust
+- Tailwind

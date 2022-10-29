@@ -59,7 +59,7 @@ function readKeyfile(keypairfile) {
 
     fs.copyFile(
         `../target/idl/${process.env.PROGRAM_NAME}.json`,
-        `../app/src/lib/idl/${process.env.PROGRAM_NAME}.json`,
+        `../app/pages/lib/idl/${process.env.PROGRAM_NAME}.json`,
         (err) => {
             if (err) throw err
             console.log(`Updated ABI ${process.env.PROGRAM_NAME}.json was copied to ./app`)
