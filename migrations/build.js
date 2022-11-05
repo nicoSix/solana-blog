@@ -5,6 +5,7 @@ const path = require("path");
 const Keypair = require("@solana/web3.js").Keypair;
 
 const SLASH = path.sep;
+const OVERRIDE_ADDRESS = process.env.OVERRIDE_ADDRESS;
 
 const programKeyfileName = `../target/deploy/${process.env.PROGRAM_NAME}-keypair.json`;
 const programKeypairFile = path.resolve(
@@ -35,9 +36,19 @@ function readKeyfile(keypairfile) {
         (err) => {
             if (err) throw err;
             else {
-                programKeypair = readKeyfile(programKeypairFile);
-                console.log(`Program public key: ${programKeypair.publicKey.toString()}`);
-                console.log(`Don't forget to replace the default key in your Solana program by this one!`);
+                if (!OVERRIDE_ADDRESS) {
+                    let programKeypair = readKeyfile(programKeypairFile);
+                    console.log(`Program public key: ${programKeypair.publicKey.toString()}`);
+                }
+                else {
+                    let programKeypair = new Keypair();
+                    fs.writeFileSync(
+                        newProgramKeyfileName,
+                        `[${Buffer.from(programKeypair.secretKey.toString())}]`
+                    )
+                    console.log(`Program public key: ${programKeypair.publicKey.toString()}`);
+                    console.log(`Don't forget to replace the default key in your Solana program by this one!`);
+                }
             }
         }
     )

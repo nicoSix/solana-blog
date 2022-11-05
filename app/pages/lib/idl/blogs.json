@@ -8,7 +8,7 @@
         {
           "name": "programMetadata",
           "isMut": true,
-          "isSigner": true
+          "isSigner": false
         },
         {
           "name": "authority",
@@ -21,7 +21,12 @@
           "isSigner": false
         }
       ],
-      "args": []
+      "args": [
+        {
+          "name": "bump",
+          "type": "u8"
+        }
+      ]
     },
     {
       "name": "getOwner",
@@ -49,12 +54,16 @@
           {
             "name": "paused",
             "type": "bool"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
           }
         ]
       }
     }
   ],
   "metadata": {
-    "address": "4xg1SmxxqfgXY98iJShQZiCm1AToXPb5g4dEpgzmCGiE"
+    "address": "5eD6zV9aqviCpB6tN9JLwk1fGw2Dperest54pUBxW4yh"
   }
 }

@@ -18,9 +18,10 @@ export default function Home() {
     }
   }, [wallet]);
 
-  const handleGetOwner = () => {
+  const handleGetOwner = async () => {
     if (workspace) {
-      console.log(getOwner());
+      const res = await getOwner(workspace);
+      console.log(res);
     }
   };
 
@@ -38,9 +39,8 @@ export default function Home() {
           <h1 className={styles.title}>
             Welcome to <a href="https://github.com/nicoSix/solblogs">Solblogs</a>!
           </h1>
+          <button onClick={handleGetOwner}><i>Test!</i></button>
         </main>
-
-        <button onClick={handleGetOwner}><i>Test!</i></button>
 
         <footer className={styles.footer}>
           Nicolas Six, 2022
