@@ -2,8 +2,9 @@
     "scripts": {
         "lint:fix": "prettier */*.js \"*/**/*{.js,.ts}\" -w",
         "lint": "prettier */*.js \"*/**/*{.js,.ts}\" --check",
+        "anchor:genkey": "cd migrations && npm install && node genKey.js",
         "anchor:build": "cd migrations && npm install && node build.js",
-        "anchor:deploy": "cd migrations && npm install && node deploy.js",
+        "anchor:deploy": "cd migrations && npm install && node build.js && node deploy.js",
         "anchor:upgrade": "cd migrations && npm install && node upgrade.js"
     },
     "dependencies": {

@@ -58,7 +58,8 @@ function readJSONFile(file) {
                 "--provider.cluster",
                 process.env.CLUSTER,
                 "--provider.wallet",
-                `${programAuthorityKeypairFile}`,
+                `${programAuthorityKeypairFile}`
+
             ],
             { stdio: "inherit" }
         )

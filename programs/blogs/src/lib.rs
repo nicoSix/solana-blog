@@ -1,7 +1,7 @@
 use anchor_lang::prelude::*;
 use anchor_lang::solana_program::msg;
 
-declare_id!("2UP64ZT7ZxawM9FNM1cjLVmBLUvoXf8oLrvvZw6VZPQT");
+declare_id!("B1uv5dUpmKW32HbDgt1uAX9yz94McuxpkHsPVsWtZxgU");
 
 #[program]
 pub mod blogs {
@@ -12,11 +12,6 @@ pub mod blogs {
         ctx.accounts.program_metadata.paused = false;
         ctx.accounts.program_metadata.bump = bump;
         Ok(())
-    }
-
-    pub fn get_owner(ctx: Context<GetOwner>) -> Result<Pubkey> {
-        msg!(&ctx.accounts.program_metadata.owner.to_string());
-        Ok(ctx.accounts.program_metadata.owner)
     }
 }
 
